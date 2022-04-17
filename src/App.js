@@ -1,40 +1,38 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Form } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import About from "./Component/About/About";
+import Blogs from "./Component/Blogs/Blogs";
+import Checkout from "./Component/Checkout/Checkout";
+import Header from "./Component/Header/Header";
+import Home from "./Component/Home/Home";
+import Login from "./Component/Login/Login";
+import RequireAuth from "./Component/RequireAuth/RequireAuth";
+import Services from "./Component/Services/Services";
+import Signup from "./Component/Signup/Signup";
 
 
 function App() {
-  const handleSubmit = (event) => {event.preventDefault();
-  };
-  const handleEmailBlur = (event) => {console.log(event.target.value)};
-  const handlePasswordBlur = (event) => {console.log(event.target.value)};
-
   return (
-    <div>
-     <div onSubmit={handleSubmit} className="registration w-50 mx-auto mt-5">
-       <h2 className="text-primary">Please Register</h2>
-       <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+    <>
+    <Header></Header>
+    {/* <Home></Home> */}
+    {/* <Signup></Signup> */}
+    <Routes>
+      <Route path="/" element={<Home></Home>}></Route>
+      <Route path="/signup" element={<Signup></Signup>}></Route>
+      <Route path="/about" element={<About></About>}></Route>
+      <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+      <Route path="/protected" element={
+        <RequireAuth>
+          <Checkout></Checkout>
+        </RequireAuth>
+      }></Route>
+      <Route path="/services" element={<Services></Services>}></Route>
+      <Route path="/login" element={<Login></Login>}></Route>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
-     </div>
-    </div>
+    </Routes>
+    </>
   );
 }
 
