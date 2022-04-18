@@ -23,7 +23,7 @@ const Blogs = () => {
           Firebase is a google provided cloud-based platform that provides a
           simple, secure, and reliable way to authorize,authenticae store, sync, and share data. It is a free service that allows everyone to build and host your own web applications and mobile apps. It is a free, open-source, and fully customizable platform that is available to anyone.
         </p>
-        <h2>Alternatives of firebase:</h2>
+        <h2>Alternatives of Firebase:</h2>
         <p>
           There are many alternatives of firebase. 5 of the top firebase
           alternatives are give below
@@ -48,7 +48,7 @@ const Blogs = () => {
                 <li>Firebase Messaging</li>
                 <li>Firebase Functions</li>
                 <li>Firebase Performance</li>
-                <li>Analytics</li>
+                <li>Analytics and more</li>
             
             </ol>  
 

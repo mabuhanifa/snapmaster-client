@@ -1,16 +1,16 @@
 .pack {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 50px 20px;
+  margin: 30px;
+  gap: 15px;
 }
 .form {
   height: 100px;
 }
-
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 600px) {
   .pack {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    margin: 50px 20px;
+    margin-left: 80px;
   }
 }

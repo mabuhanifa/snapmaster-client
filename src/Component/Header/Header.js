@@ -7,7 +7,6 @@ import './Header.css';
 
 const Header = () => {
      const[user]= useAuthState(auth);
-    console.log(user);
     return (
         <div className='topbar bg-light'> 
             <div >
@@ -15,7 +14,6 @@ const Header = () => {
             </div>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/services">Services</Link>
                 <Link to="/checkout">Checkout</Link>
                 <Link to="/about">About</Link>
                 <Link to="/blogs">Blogs</Link>

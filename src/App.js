@@ -4,12 +4,12 @@ import "./App.css";
 import About from "./Component/About/About";
 import Blogs from "./Component/Blogs/Blogs";
 import Checkout from "./Component/Checkout/Checkout";
+import Footer from "./Component/Footer/Footer";
 import Header from "./Component/Header/Header";
 import Home from "./Component/Home/Home";
 import Login from "./Component/Login/Login";
 import Notfound from "./Component/Notfound/Notfound";
 import RequireAuth from "./Component/RequireAuth/RequireAuth";
-import Services from "./Component/Services/Services";
 import Signup from "./Component/Signup/Signup";
 
 
@@ -27,11 +27,11 @@ function App() {
           <Checkout></Checkout>
         </RequireAuth>
       }></Route>
-      <Route path="/services" element={<Services></Services>}></Route>
       <Route path="/login" element={<Login></Login>}></Route>
       <Route path="*" element={<Notfound/>}/>
 
     </Routes>
+    <Footer></Footer>
     </>
   );
 }

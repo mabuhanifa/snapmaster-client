@@ -9,15 +9,15 @@ const Services = () => {
     
 
     return (
-        <>
-        <div className='pack'>
+        
+            <div className='pack'>
            { packages.map( (pack) => <Item 
            key={pack.id}
            pack={pack}
             />)}
         </div>
 
-        </>
+        
     );
 };
 

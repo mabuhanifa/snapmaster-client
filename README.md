@@ -5,4 +5,5 @@
 - This is a React SPA (Single Page App) built with firebase authentication
 - This is built with React and React Router
 - This project is contain private route
+- This project is contain react toast
 - This project is built with react-firebase hooks
