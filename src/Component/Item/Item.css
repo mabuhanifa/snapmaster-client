@@ -1,0 +1,8 @@
+.package img {
+  width: 300px;
+  margin-bottom: 20px;
+}
+.package {
+  width: 300px;
+  margin: 0px 20px;
+}

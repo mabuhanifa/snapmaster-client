@@ -5,7 +5,7 @@ import { Button, Form } from "react-bootstrap";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { app } from "../../firebase.init";
-import useFirebase from "../hooks/useFire";
+import useFirebase from "../hooks/useFirebase";
 import './Signup.css';
 
 

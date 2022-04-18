@@ -1,11 +1,14 @@
 import React from 'react';
+import usePackages from '../hooks/usePackages';
+import Item from '../Item/Item';
+import './Services.css';
 
 const Services = () => {
+    const [packages, setPackages] = usePackages();
+
     return (
-        <div>
-            <h2>
-                this is services page
-            </h2>
+        <div className='pack'>
+           { packages.map( (pack) => <Item key={pack.id} pack={pack}/>)}
         </div>
     );
 };
