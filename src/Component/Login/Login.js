@@ -16,7 +16,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [passError, setPasserror] = useState("");
     const [emailError, setEmailerror] = useState("");
-   // const { signInWithGoogle } = useFirebase();
+   
     const location = useLocation();
     const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
@@ -28,7 +28,7 @@ const Login = () => {
 
     };
 
-    //const { signInWithGoogle,auth } = useFirebase();
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -45,7 +45,6 @@ const Login = () => {
         createUserWithEmailAndPassword(auth,email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user.email);
                 verifyEmail();
             })
             .catch((error) => {console.log(error)
@@ -55,7 +54,7 @@ const Login = () => {
         const verifyEmail =() =>{
           sendEmailVerification(auth.currentUser)
           .then(() => {
-            console.log("Email verification sent");
+            toast("Email verification sent");
           })
           
         };
