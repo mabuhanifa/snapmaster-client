@@ -1,10 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = (props) => {
     const {name,price,img,description} = props.pack;
+    const navigate = useNavigate();
     function scrollWin() {
         window.scrollTo(0, 500);
+        const go = ()=> navigate('/checkout');
+        go();
       }
     
     return (
@@ -14,7 +18,7 @@ const Item = (props) => {
             <h4>Package : {name}</h4>
             <p>{description} </p>
             <p>Price: $ {price }</p>
-            <button className='book-btn' onClick={scrollWin}>Book This Package</button>
+            <button className='book-btn' onClick={scrollWin }>Book This Package</button>
             </div>
         </div>
     );

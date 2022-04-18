@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
+import Mail from '../Services/Mail';
 import Services from '../Services/Services';
 
 const Checkout = () => {
@@ -8,6 +9,7 @@ const Checkout = () => {
     return (
         <div>
            <Services></Services>
+           <Mail></Mail>
         </div>
     );
 };

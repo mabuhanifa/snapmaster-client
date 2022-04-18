@@ -9,7 +9,7 @@ const Header = () => {
      const[user]= useAuthState(auth);
     console.log(user);
     return (
-        <div className='topbar'> 
+        <div className='topbar bg-light'> 
             <div >
                 <h2>SnapMaster</h2>
             </div>
@@ -22,7 +22,7 @@ const Header = () => {
                 <span>{user?.displayName && user.displayName}</span>
                 { user?.uid
                 ? 
-                <button onClick={()=>signOut(auth)}> SignOut </button>
+                <button className='btn btn-danger ms-2' onClick={()=>signOut(auth)}> SignOut </button>
                 :
                 <Link to="/signup">Signup</Link>
                     }
