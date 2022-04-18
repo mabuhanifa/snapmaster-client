@@ -3,6 +3,9 @@ import './Item.css';
 
 const Item = (props) => {
     const {name,price,img,description} = props.pack;
+    function scrollWin() {
+        window.scrollTo(0, 500);
+      }
     
     return (
         <div className='package'>
@@ -11,7 +14,7 @@ const Item = (props) => {
             <h4>Package : {name}</h4>
             <p>{description} </p>
             <p>Price: $ {price }</p>
-            <button className='book-btn'>Book This Package</button>
+            <button className='book-btn' onClick={scrollWin}>Book This Package</button>
             </div>
         </div>
     );

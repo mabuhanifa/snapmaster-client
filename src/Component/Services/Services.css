@@ -3,6 +3,9 @@
   grid-template-columns: repeat(3, 1fr);
   margin: 50px 20px;
 }
+.form {
+  height: 100px;
+}
 
 @media only screen and (max-width: 576px) {
   .pack {
