@@ -1,5 +1,13 @@
 .pack {
-  width: 300px;
-  display: flex;
-  margin: 100px 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 50px 20px;
+}
+
+@media only screen and (max-width: 576px) {
+  .pack {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 50px 20px;
+  }
 }

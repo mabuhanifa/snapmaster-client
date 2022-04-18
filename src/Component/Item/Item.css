@@ -1,8 +1,15 @@
-.package img {
-  width: 300px;
-  margin-bottom: 20px;
-}
 .package {
-  width: 300px;
-  margin: 0px 20px;
+  width: 400px;
+  border: 1px solid lightgray;
+}
+.book-btn {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: rgb(33, 92, 255);
+  color: white;
+  border-radius: 5px;
+}
+.book-btn:hover {
+  background-color: rgb(54, 54, 255);
 }

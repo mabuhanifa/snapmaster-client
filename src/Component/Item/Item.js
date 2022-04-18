@@ -6,12 +6,12 @@ const Item = (props) => {
     
     return (
         <div className='package'>
-            <img src={img} alt="" />
+            <img className='img-fluid rounded mx-auto d-block p-2' src={img} alt="" />
             <div className='m-2'>
             <h4>Package : {name}</h4>
             <p>{description} </p>
             <p>Price: $ {price }</p>
-            <button className='btn btn-primary d-block mx-auto px-5'>Book This Package</button>
+            <button className='book-btn'>Book This Package</button>
             </div>
         </div>
     );
