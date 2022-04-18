@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import { Button, Form } from "react-bootstrap";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { FcGoogle } from "react-icons/fc";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { auth } from "../../firebase.init";
 import './Login.css';
 
@@ -62,7 +64,7 @@ const Login = () => {
     const handlePasswordReset = () => {
       sendPasswordResetEmail(auth, email)
       .then(()=>{
-        console.log("Password reset email sent");
+        toast("Password reset email sent");
       })
 
     }
@@ -93,11 +95,12 @@ const Login = () => {
        
         
         <br />
-        <Button className="mt-2"onClick={handlePasswordReset} variant="link">Forget Password?</Button>
+        <Button className="mt-2"onClick={handlePasswordReset} variant="link">Forget Password?</Button><br />
+        <h4 className="mt-2">New to SnapMaster ? Go to  <Link  to="/signup">Signup Page</Link>   </h4>
         <br />
-        <Button className="mt-5 csbtn" onClick={hanldeGoogleSignIn}  type="submit"> 
+        <Button className="mt-2 csbtn" onClick={hanldeGoogleSignIn}  type="submit"> 
         <FcGoogle className="google" ></FcGoogle>Signin with Google </Button>
-      </Form>
+      </Form> 
      </div>
     </div>
     </>
