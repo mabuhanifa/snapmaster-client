@@ -3,11 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-            <h2>
-                
-                This is blogs
-
-            </h2>
+            <h2> Difference between authorization and authentication </h2>
         </div>
     );
 };

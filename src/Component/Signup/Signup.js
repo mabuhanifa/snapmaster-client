@@ -93,7 +93,7 @@ const Signup = () => {
          
         <br />
         <Button className="mt-5 csbtn" onClick={signInWithGoogle}  type="submit"> 
-        <FcGoogle className="google" ></FcGoogle>Login with Google </Button>
+        <FcGoogle className="google" ></FcGoogle>Signin with Google </Button>
         <h4 className="mt-4">Alredy registered? Go to  <Link className="link" to="/login">Login Page</Link>   </h4> 
       </Form>
      </div>
