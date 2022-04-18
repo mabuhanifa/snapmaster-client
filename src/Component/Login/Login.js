@@ -1,23 +1,24 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
 import React, { useState } from 'react';
 import { Button, Form } from "react-bootstrap";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
-import { app } from "../../firebase.init";
-import useFirebase from "../hooks/useFire";
+import { auth } from "../../firebase.init";
 import './Login.css';
 
 const Login = () => {
+    const [signInWithGoogle,user ] = useSignInWithGoogle(auth);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passError, setPasserror] = useState("");
     const [emailError, setEmailerror] = useState("");
-    const { signInWithGoogle } = useFirebase();
+   // const { signInWithGoogle } = useFirebase();
     const location = useLocation();
     const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
-    const hanldesignInWithGoogle = () => {
+    const hanldeGoogleSignIn = () => {
         signInWithGoogle()
         .then(()=>{
                 navigate(from, { replace: true });
@@ -26,7 +27,6 @@ const Login = () => {
     };
 
     //const { signInWithGoogle,auth } = useFirebase();
-    const auth = getAuth(app);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -95,7 +95,7 @@ const Login = () => {
         <br />
         <Button className="mt-2"onClick={handlePasswordReset} variant="link">Forget Password?</Button>
         <br />
-        <Button className="mt-5 csbtn" onClick={hanldesignInWithGoogle}  type="submit"> 
+        <Button className="mt-5 csbtn" onClick={hanldeGoogleSignIn}  type="submit"> 
         <FcGoogle className="google" ></FcGoogle>Signin with Google </Button>
       </Form>
      </div>
